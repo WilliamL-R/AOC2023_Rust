@@ -16,8 +16,7 @@ fn main() {
     let minimum_games = get_required_cubes(dataset_file);
     let power_sum: u32 = minimum_games.iter().sum();
     println!("Sum of the valid number of cubes is: {sum}");
-    println!("Sum of the valid number of cubes is: {power_sum}");
-
+    println!("Sum of the of the power of the sets are : {power_sum}");
 }
 
 fn get_valid_games(dataset_file : &str) -> Vec<u16> {
