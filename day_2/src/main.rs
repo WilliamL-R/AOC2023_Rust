@@ -3,9 +3,6 @@ use std::fs;
 
 static DATASET_FOLDER: &str = "dataset/";
 
-static RED_CUBES_NAME: &str = "red";
-static GREEN_CUBES_NAME: &str = "green";
-static BLUE_CUBES_NAME: &str = "blue";
 static RED_CUBES_ALLOWED: u16 = 12;
 static GREEN_CUBES_ALLOWED: u16 = 13;
 static BLUE_CUBES_ALLOWED: u16 = 14;
@@ -14,11 +11,11 @@ fn main() {
     let args: Vec<String> = env::args().collect();
 
     let dataset_file : &str = &args[1];
-    //let valid_games = get_valid_games(dataset_file);
-    //let sum : u16 = valid_games.iter().sum();
+    let valid_games = get_valid_games(dataset_file);
+    let sum : u16 = valid_games.iter().sum();
     let minimum_games = get_required_cubes(dataset_file);
     let power_sum: u32 = minimum_games.iter().sum();
-    //print!("Sum of the valid number of cubes is: {sum}");
+    println!("Sum of the valid number of cubes is: {sum}");
     println!("Sum of the valid number of cubes is: {power_sum}");
 
 }
